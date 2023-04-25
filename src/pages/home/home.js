@@ -1,7 +1,7 @@
 import React from "react";
 import "../home/home.css";
-import img1 from "../../assets/fp1.jpg";
-import img2 from "../../assets/fp2.webp";
+import img1 from "../../assets/fp1.jpeg";
+import img2 from "../../assets/fp2.jpeg";
 import img3 from "../../assets/fp3.jpeg";
 
 export default function Home() {
