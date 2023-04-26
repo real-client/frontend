@@ -1,18 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import "./navBar.css";
 
 function Navbar() {
-  // const {show, setShow} = useState(null)
-
-  // const showSignup = () => {
-  //   setShow(true)
-  // }
-
-  // const hideSignup = () => {
-  //   setShow(false)
-  // }
-
   return (
     <nav>
       <ul>
