@@ -6,8 +6,10 @@ import ProfileEvents from '../../components/profile/ProfileEvents';
 function Profile() {
   return (
     <div className={classes.profilePage}>
+      <div className={classes.profileMainPage}>
         <ProfileAside />
         <ProfileEvents />
+      </div>
     </div>
   )
 }
