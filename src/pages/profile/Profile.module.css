@@ -22,3 +22,26 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+@media (max-width: 1024px) {
+  .profileMainPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .profilePage{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+    .profileMainPage {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .profilePage{
+      flex-direction: column;
+      padding:0px;
+    }
+  }

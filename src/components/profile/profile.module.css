@@ -91,7 +91,9 @@ h6 {
 .profileEvent {
   display: flex;
   gap: 24px;
-  margin: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .profileEventDescription {
@@ -149,43 +151,75 @@ h6 {
   margin-bottom: 16px;
 }
 
-.userName{
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-    margin-bottom: 8px;
+.userName {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  margin-bottom: 8px;
 }
 
-.profileUpcomingEvent{
-    display:flex;
-    gap:8px;
-    text-align: left;
-    margin: 10px;
+.profileUpcomingEvent {
+  display: flex;
+  gap: 8px;
+  text-align: left;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.profileUpcomingEventSection{
-    position: relative;
-    padding: 24px;
-    margin-bottom: 16px;
-    background-color: #fff;
-    text-align: left;
+.profileUpcomingEventSection {
+  position: relative;
+  padding: 24px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  text-align: left;
 }
-.profileUpcomingEventDescription h3{
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
-    font-weight: 600;
+.profileUpcomingEventDescription h3 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 600;
 }
 
-.profileUpcomingEventDescription div{
-    vertical-align: baseline;
-    display: inline;
-    color: #0056d2;
-    padding: 0;
-    text-decoration: underline;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
-    font-weight: 400;
+.profileUpcomingEventDescription div {
+  vertical-align: baseline;
+  display: inline;
+  color: #0056d2;
+  padding: 0;
+  text-decoration: underline;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .profileLeftSide {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .profileRightSide {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .profileLeftSide {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .profileRightSide {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .profileEventImage {
+    width: 100px;
+    height: 100px;
+  }
+  .profileEventImage img {
+    width: 100px;
+    height: 100px;
+  }
 }
