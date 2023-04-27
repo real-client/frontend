@@ -1,16 +1,7 @@
 import "./sideBar.css";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  BiHomeAlt,
-  BiLogOut,
-  BiChevronRight,
-  BiBarChartSquare,
-  BiGroup,
-  BiBriefcase,
-  BiFile,
-} from "react-icons/bi";
-import { MdOutlinePersonPin } from "react-icons/md";
+import { BiHomeAlt, BiChevronRight } from "react-icons/bi";
 import logo from "./logo.svg";
 
 const Sidebar = (props) => {
