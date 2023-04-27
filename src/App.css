@@ -40,3 +40,9 @@
 .react-calendar {
   border: 0px solid #a0a096 !important;
 }
+
+@media (max-width: 600px) {
+  .react-calendar {
+    width:100% !important;
+  }
+}
