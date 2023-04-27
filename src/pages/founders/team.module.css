@@ -1,0 +1,14 @@
+.teamWrapper {
+  margin-top: 50px;
+}
+.container {
+  --container: 1160px;
+  max-width: var(--container);
+  margin: auto;
+}
+.teamGrid {
+  display: grid;
+  grid-template-columns: 32.33% 32.33% 32.33%;
+  column-gap: 5%;
+  margin-top: 100px;
+}

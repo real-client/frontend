@@ -1,8 +1,8 @@
 import React from "react";
 import "../home/home.css";
-import img1 from "../../assets/fp1.jpg";
-import img2 from "../../assets/fp2.webp";
-import img3 from "../../assets/fp3.jpeg";
+// import img1 from "../../assets/fp1.jpg";
+// import img2 from "../../assets/fp2.webp";
+// import img3 from "../../assets/fp3.jpeg";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <div className="container">
         <div className="card">
           <div className="imgbox">
-            <img src={img1} alt="img1"/>
+            {/* <img src={img1} alt="img1"/> */}
           </div>
           <div className="content">
             <h2> card one</h2>
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
         <div className="card">
           <div className="imgbox">
-            <img src={img2} alt="img2"/>
+            {/* <img src={img2} alt="img2"/> */}
           </div>
           <div className="content">
             <h2> card two </h2>
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className="card">
           <div className="imgbox">
-            <img src={img3} alt="img3"/>
+            {/* <img src={img3} alt="img3"/> */}
           </div>
           <div className="content">
             <h2> card three </h2>
