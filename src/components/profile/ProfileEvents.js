@@ -10,6 +10,7 @@ function ProfileEvents() {
           <div className={classes.profileEventImage}>
             <img
               src="https://pbs.twimg.com/media/FuO9lvtX0AEYp28.jpg"
+              alt="psoter"
               width="150px"
               height="150px"
             />
@@ -28,6 +29,7 @@ function ProfileEvents() {
           <div className={classes.profileEventImage}>
             <img
               src="https://pbs.twimg.com/media/FuO9lvtX0AEYp28.jpg"
+              alt="poster"
               width="150px"
               height="150px"
             />
@@ -46,6 +48,7 @@ function ProfileEvents() {
           <div className={classes.profileEventImage}>
             <img
               src="https://pbs.twimg.com/media/FuO9lvtX0AEYp28.jpg"
+              alt="poster"
               width="150px"
               height="150px"
             />

@@ -36,6 +36,7 @@ function ProfileAside() {
           <div className={classes.profileUpcomingEventImage}>
             <img
               src="https://pbs.twimg.com/media/FuO9lvtX0AEYp28.jpg"
+              alt="poster"
               width="80px"
               height="80px"
             />
@@ -50,6 +51,7 @@ function ProfileAside() {
           <div className={classes.profileUpcomingEventImage}>
             <img
               src="https://pbs.twimg.com/media/FuO9lvtX0AEYp28.jpg"
+              alt="poster"
               width="80px"
               height="80px"
             />
