@@ -10,5 +10,17 @@
   display: grid;
   grid-template-columns: 32.33% 32.33% 32.33%;
   column-gap: 5%;
-  margin-top: 100px;
 }
+
+
+@media (max-width: 1024px) {
+  .teamGrid {
+    grid-template-columns: 50% 50% ;
+  }
+}
+
+@media (max-width: 600px) {
+  .teamGrid {
+    grid-template-columns: 100% ;
+  }
+  }

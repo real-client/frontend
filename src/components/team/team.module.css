@@ -54,7 +54,6 @@ a:hover {
 .teamcol {
   padding: 15px;
   background: #fff;
-  /* border-radius: 10px; */
   position: relative;
   transition: transform 1s ease-in-out;
 }
@@ -71,7 +70,6 @@ a:hover {
   right: 0;
   top: 0;
   background: -webkit-linear-gradient(#ffbf00, #ffa000);
-  /* border-top-right-radius: 10px; */
   transition: width 1s ease-in-out;
 }
 .teamcol:after {
@@ -82,7 +80,6 @@ a:hover {
   left: 0;
   bottom: 0;
   background: -webkit-linear-gradient(#0052cc, #005fec);
-  /* border-bottom-left-radius: 10px; */
   transition: width 1s ease-in-out;
 }
 .teamcol:hover::before,
