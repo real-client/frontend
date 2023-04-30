@@ -7,8 +7,7 @@ import Profile from './pages/profile/Profile';
 function App() {
   return (
     <div className="App">
-      <Profile />
-      <Founders />
+     
     </div>
   );
 }

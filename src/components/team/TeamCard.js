@@ -1,24 +1,18 @@
 import React from "react";
 import classes from "./team.module.css";
-
+import { FaLinkedin }from "react-icons/fa";
+import {FiMail} from "react-icons/fi";
 function TeamCard() {
   return (
     <div className={classes.teamCard}>
-      {/* <img
-        src="https://learn.microsoft.com/api/attachments/209536-360-f-364211147-1qglvxv1tcq0ohz3fawufrtonzz8nq3e.jpg?platform=QnA"
-        alt=""
-        width = "300px"
-        height = "300px"
-      />
-      <h2>Amir Nasser </h2>
-      <p>Cofounder</p> */}
       <div className={classes.colmun}>
         <div className={classes.teamcol}>
           <div className={classes.teamcolinner}>
             <div className={classes.avatar}>
               <img
-                src="https://tinypic.host/images/2023/02/21/pikrepo.com-2.jpg"
+                src="https://learn.microsoft.com/api/attachments/209536-360-f-364211147-1qglvxv1tcq0ohz3fawufrtonzz8nq3e.jpg?platform=QnA"
                 alt="Member"
+                style={{width: '150px', height:'150px' }}
               />
             </div>
             <div className={classes.memberName}>
@@ -39,17 +33,13 @@ function TeamCard() {
               <ul className={classes.socialListing}>
                 <li>
                   <a href="#">
-                    <i className="fa fa-facebook"></i>
+                    <FaLinkedin />
+                    {/* <FiLinkedin /> */}
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i className="fa fa-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-twitter"></i>
+                    <FiMail />
                   </a>
                 </li>
               </ul>

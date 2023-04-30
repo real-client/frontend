@@ -15,12 +15,24 @@
 
 @media (max-width: 1024px) {
   .teamGrid {
-    grid-template-columns: 50% 50% ;
+    grid-template-columns: 50% 50%;
+  }
+  .container{
+    --container: 90vw;
+    max-width: var(--container);
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 @media (max-width: 600px) {
   .teamGrid {
     grid-template-columns: 100% ;
+  }
+  .container{
+    --container: 90vw;
+    max-width: var(--container);
+    padding-left: 24px;
+    padding-right: 24px;
   }
   }
