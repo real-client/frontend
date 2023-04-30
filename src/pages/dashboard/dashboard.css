@@ -1,0 +1,17 @@
+.upper-dashboard-main {
+    display: flex;
+}
+
+.upper-dashboard-main > * {
+    flex: 1 1 0px;
+    width: 0;
+}
+
+.doughut-wrapper {
+    box-sizing: content-box;
+    max-height: 320px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #bbb;
+}
