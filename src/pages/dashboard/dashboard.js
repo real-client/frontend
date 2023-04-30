@@ -1,9 +1,10 @@
 import React from "react";
 import RectangleCard from "../../components/rectangleCard/rectangleCard";
+import RecentActivity from "../../components/recentActivity/recentActivity";
 import "./dashboard.css";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-
+import { FaUserCircle } from "react-icons/fa";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function home() {
@@ -69,7 +70,16 @@ export default function home() {
               <Doughnut data={data} plugins={plugins} />
             </div>
           </div>
-          <div className=""></div>
+          <div className="recent-activity-container">
+            <h2>Recent Activities</h2>
+            <RecentActivity
+              icon={<FaUserCircle />}
+              author={"Amen Nafeh"}
+              title={"Title Title Title"}
+              date={"May 17, 2021"}
+              time={"01:00PM"}
+            />
+          </div>
         </div>
       </main>
     </>
