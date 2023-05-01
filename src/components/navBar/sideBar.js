@@ -8,6 +8,7 @@ const Sidebar = (props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const handleToggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+    props.setIsSidebarOpen(isSidebarOpen);
   };
 
   return (

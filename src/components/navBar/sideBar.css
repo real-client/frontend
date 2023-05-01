@@ -8,10 +8,8 @@
     --gray: #707070;
     
     /* Transition */
-    --tran-03: all 0.2s ease;
+    --tran-02: all 0.2s ease;
     --tran-03: all 0.3s ease;
-    --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
 }
 
 body {
