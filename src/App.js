@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Founders from "./pages/founders/Founders";
 import Home from "./pages/home/home.js";
 import Profile from "./pages/profile/Profile";
 import Events from "./pages/events/Events";
@@ -10,14 +9,18 @@ import ContactUs from "./pages/contactUs/ContactUs";
 import Founders from "./pages/founders/Founders";
 import Volunteers from "./pages/volunteers/Volunteers";
 import Team from "./pages/team/Team";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
 
 function App() {
   return (
     <div className="App">
+      <Events />
       <div className="App-container">
-        <Routes>
+        
+        {/* <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signup" element={<Signup />} />
           <Route exact path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/volunteers" element={<Volunteers />} />
@@ -30,7 +33,7 @@ function App() {
           {/* <Route element={<PrivateSuperAdmin />}>
               <Route path="/admin" element={<Admin />} />
             </Route> */}
-        </Routes>
+        {/* </Routes>  */}
       </div>
     </div>
   );
