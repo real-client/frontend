@@ -70,15 +70,38 @@ export default function home() {
               <Doughnut data={data} plugins={plugins} />
             </div>
           </div>
-          <div className="recent-activity-container">
-            <h2>Recent Activities</h2>
-            <RecentActivity
-              icon={<FaUserCircle />}
-              author={"Amen Nafeh"}
-              title={"Title Title Title"}
-              date={"May 17, 2021"}
-              time={"01:00PM"}
-            />
+          <div>
+            <div className="recent-activity-container">
+              <h2>Recent Activities</h2>
+              <RecentActivity
+                icon={<FaUserCircle />}
+                author={"Amen Nafeh"}
+                title={"Title Title Title"}
+                date={"May 17, 2021"}
+                time={"01:00PM"}
+              />
+              <RecentActivity
+                icon={<FaUserCircle />}
+                author={"Amen Nafeh"}
+                title={"Title Title Title"}
+                date={"May 17, 2021"}
+                time={"01:00PM"}
+              />
+              <RecentActivity
+                icon={<FaUserCircle />}
+                author={"Amen Nafeh"}
+                title={"Title Title Title"}
+                date={"May 17, 2021"}
+                time={"01:00PM"}
+              />
+              <RecentActivity
+                icon={<FaUserCircle />}
+                author={"Amen Nafeh"}
+                title={"Title Title Title"}
+                date={"May 17, 2021"}
+                time={"01:00PM"}
+              />
+            </div>
           </div>
         </div>
       </main>

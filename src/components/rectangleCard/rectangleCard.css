@@ -1,9 +1,13 @@
+.rectangle-card:first-child {
+    margin-top: 0;
+}
+
 .rectangle-card {
     display: flex;
     align-items: center;
-    padding: 10px;
-    width: 300px;
-    margin-block: 15px;
+    padding: 16px;
+    width: 400px;
+    margin: 15px auto;
     border: 1px solid #bbb;
 }
 

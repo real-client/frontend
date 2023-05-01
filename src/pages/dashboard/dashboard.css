@@ -1,5 +1,6 @@
 .upper-dashboard-main {
     display: flex;
+    margin-top: 25px;
 }
 
 .upper-dashboard-main > * {
@@ -10,15 +11,27 @@
 .doughut-wrapper {
     box-sizing: content-box;
     max-height: 320px;
-    width: fit-content;
+    width: 400px;
     margin: 0 auto;
     padding: 10px;
     border: 1px solid #bbb;
+}
+
+.doughut-wrapper canvas {
+    margin-inline: auto;
 }
 
 /* recent activity */
 
 .recent-activity-container {
     overflow-y: scroll;
+    max-height: 320px;
+    width: 400px;
+    margin-inline: auto;
+    border: 1px solid #bbb;
+    padding: 10px;
 }
 
+.recent-activity-container h2 {
+    margin-bottom: 15px;
+}
