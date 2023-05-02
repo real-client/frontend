@@ -15,9 +15,6 @@ import Signup from "./pages/signup/Signup";
 function App() {
   return (
     <div className="App">
-      {/* <Events /> */}
-      <Founders />
-      {/* <Profile /> */}
       <div className="App-container">
         
         {/* <Routes>
