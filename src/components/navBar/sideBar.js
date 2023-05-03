@@ -2,6 +2,7 @@ import "./sideBar.css";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiHomeAlt, BiChevronRight } from "react-icons/bi";
+import { AiOutlineUser } from "react-icons/ai";
 import logo from "./logo.svg";
 
 const Sidebar = (props) => {
@@ -34,14 +35,14 @@ const Sidebar = (props) => {
               <li className="nav-link">
                 <NavLink to="/">
                   <BiHomeAlt className="icon" />
-                  <span className="text nav-text">anything</span>
+                  <span className="text nav-text">Home</span>
                 </NavLink>
               </li>
 
               <li className="nav-link">
-                <NavLink to="/test">
-                  <BiHomeAlt className="icon" />
-                  <span className="text nav-text">anything</span>
+                <NavLink to="/users">
+                  <AiOutlineUser className="icon" />
+                  <span className="text nav-text">Users</span>
                 </NavLink>
               </li>
 
