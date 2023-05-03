@@ -11,9 +11,11 @@ import Volunteers from "./pages/volunteers/Volunteers";
 import Team from "./pages/team/Team";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
+import NavBar from './components/navBar/navBar.js';
 
-function App() {
+function App () {
   return (
+
     <div className="App">
       <div className="App-container">
         

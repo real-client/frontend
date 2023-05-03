@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .page {
   display: flex;
   flex-direction: column;
@@ -179,3 +180,5 @@ svg:hover .tooltip {
   background: linear-gradient(320deg, rgb(3, 77, 146), rgb(0, 60, 255));
   color: #ffffff;
 }
+=======
+>>>>>>> NavBar
