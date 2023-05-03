@@ -1,11 +1,18 @@
 .upper-dashboard-main {
     display: flex;
+    gap: 10px;
     margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .upper-dashboard-main > * {
     flex: 1 1 0px;
-    width: 0;
+}
+
+.upper-dashboard-main-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .doughut-wrapper {

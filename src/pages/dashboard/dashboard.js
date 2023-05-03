@@ -1,4 +1,5 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
+import axios from "axios";
 import RectangleCard from "../../components/rectangleCard/rectangleCard";
 import RecentActivity from "../../components/recentActivity/recentActivity";
 import "./dashboard.css";
@@ -7,9 +8,22 @@ import { Doughnut } from "react-chartjs-2";
 import { FaUserCircle } from "react-icons/fa";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function home() {
+export default function Home() {
+  const [Loading, setLoading] = useState(true);
+  const [UserData, setData] = useState([]);
+  const [AdminData, setAdminData] = useState([]);
+  const [EventData, setEventData] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    document.title = "Dashboard";
+    getUserData();
+    getAdminData();
+    getEventData();
+  }, []);
+
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["Events", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [
       {
         label: " Number of Votes",
@@ -43,27 +57,77 @@ export default function home() {
         const yCoor = chart.getDatasetMeta(0).data[0].y;
 
         ctx.save();
-        ctx.font = "bolder 20px sans-serif";
+        ctx.font = "bolder 18px sans-serif";
         ctx.fillStyle = "black";
         ctx.textBaseline = "middle";
         ctx.textAlign = "center";
-        ctx.fillText("Top", xCoor, yCoor + 15);
+        ctx.fillText("Contents", xCoor, yCoor + 15);
 
         ctx.font = "bolder 25px sans-serif";
         ctx.fillStyle = "black";
-        ctx.fillText("Bottom", xCoor, yCoor - 15);
+        ctx.fillText("Top", xCoor, yCoor - 15);
       },
     },
   ];
+
+  const getUserData = () => {
+    // const token = Cookies.get("token");
+    axios
+      .get("http://127.0.0.1:3000/user")
+      .then((response) => {
+        setData(response.data.response);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  };
+
+  const getAdminData = () => {
+    // const token = Cookies.get("token");
+    axios
+      .get("http://127.0.0.1:3000/admin")
+      .then((response) => {
+        setAdminData(response.data.response);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  };
+
+  const getEventData = () => {
+    // const token = Cookies.get("token");
+    axios
+      .get("http://127.0.0.1:3000/event")
+      .then((response) => {
+        setEventData(response.data.response);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  };
 
   return (
     <>
       <main>
         <div className="upper-dashboard-main">
           <div className="upper-dashboard-main-card">
-            <RectangleCard title="Total Users" unit="Learner" number="32" />
-            <RectangleCard title="Total Users" unit="Learner" number="32" />
-            <RectangleCard title="Total Users" unit="Learner" number="32" />
+            <RectangleCard
+              title="Total Admins"
+              unit="Admin"
+              number={AdminData.length}
+            />
+            <RectangleCard
+              title="Total Users"
+              unit="Learner"
+              number={UserData.length}
+            />
+            <RectangleCard title="Total Events" unit="Event" number={"9"} />
           </div>
           <div className="total-info">
             <div className="doughut-wrapper">

@@ -7,7 +7,7 @@
     align-items: center;
     padding: 16px;
     width: 400px;
-    margin: 15px auto;
+    margin-inline: auto;
     border: 1px solid #bbb;
 }
 

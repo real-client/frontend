@@ -6,7 +6,7 @@
 
 .sidebar-closed-content {
     margin-left: 95px;
-    width: calc(100vw - 60px);
+    width: calc(100vw - 95px);
     transition: var(--tran-03);
 }
 
