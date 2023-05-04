@@ -14,7 +14,7 @@ import SaveAsRoundedIcon from "@mui/icons-material/SaveAsRounded";
 import LibraryAddRoundedIcon from "@mui/icons-material/LibraryAddRounded";
 
 function createData(
-  id,
+  _id,
   first_name,
   last_name,
   active_email,
@@ -23,7 +23,7 @@ function createData(
   verified
 ) {
   return {
-    id,
+    _id,
     first_name,
     last_name,
     active_email,
@@ -48,24 +48,23 @@ function Users(props) {
 
   const rows =
     Data ||
-    [].map((item) =>
+    [].map((item) => {
       createData(
-        item.id,
+        item._id,
         item.first_name,
         item.last_name,
         item.active_email,
         item.phone,
         item.student_id,
         item.verified
-      )
-    );
+      );
+    });
 
   const handleSearch = debounce((searchValue) => {
     console.log(searchValue);
   }, 500);
 
   const handleDelete = (rowsDeleted) => {
-    // const token = Cookies.get("token");
     axios
       .delete(`http://127.0.0.1:3000/user/${rowsDeleted}`, {})
       .then((response) => {
@@ -77,11 +76,11 @@ function Users(props) {
   };
 
   const getData = () => {
-    // const token = Cookies.get("token");
     axios
       .get("http://127.0.0.1:3000/user")
       .then((response) => {
-        setData(response.data.message);
+        console.log(response);
+        setData(response.data.response);
         setLoading(false);
       })
       .catch((error) => {
@@ -92,9 +91,8 @@ function Users(props) {
 
   const handleUpdate = (rowData) => {
     setEditingRow(true);
-    // const token = Cookies.get("token");
     axios
-      .patch(`http://127.0.0.1:3000/user/${rowData[0]}`, {
+      .put(`http://127.0.0.1:3000/user/${rowData[0]}`, {
         first_name: rowData[1],
         last_name: rowData[2],
         active_email: rowData[3],
@@ -114,7 +112,7 @@ function Users(props) {
   };
   const columns = [
     {
-      name: "id",
+      name: "_id",
       label: "ID",
       options: {
         display: "excluded",
@@ -231,10 +229,56 @@ function Users(props) {
     {
       name: "student_id",
       label: "Student ID",
+      options: {
+        customBodyRender: (value, tableMeta, updateValue) => {
+          const rowIndex = tableMeta.rowIndex;
+          const isEditing = rowIndex === editingRow;
+
+          return (
+            <div style={{ textAlign: "center" }}>
+              {isEditing ? (
+                <input
+                  className="EditInput"
+                  value={value}
+                  onChange={(e) => {
+                    updateValue(e.target.value);
+                  }}
+                />
+              ) : (
+                value
+              )}
+            </div>
+          );
+        },
+        editable: true,
+      },
     },
     {
       name: "verified",
       label: "Verified",
+      options: {
+        customBodyRender: (value, tableMeta, updateValue) => {
+          const rowIndex = tableMeta.rowIndex;
+          const isEditing = rowIndex === editingRow;
+          console.log(value);
+          return (
+            <div style={{ textAlign: "center" }}>
+              {isEditing ? (
+                <input
+                  className="EditInput"
+                  value={value}
+                  onChange={(e) => {
+                    updateValue(e.target.value);
+                  }}
+                />
+              ) : (
+                value
+              )}
+            </div>
+          );
+        },
+        editable: true,
+      },
     },
     {
       name: "actions",
