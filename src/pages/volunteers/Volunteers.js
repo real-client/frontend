@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import TeamCard from "../../components/team/TeamCard";
 import classes from "../founders/team.module.css";
 import axios from "axios";
+import VolunteerCard from "./volunteerCard";
 
 function Volunteers() {
   const [volunteers, setVolunteers] = useState([]);
@@ -26,6 +26,7 @@ function Volunteers() {
         console.log(error);
       });
   }, []);
+  console.log(volunteers);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -41,7 +42,7 @@ function Volunteers() {
       image: event.target.files[0]
     }));
   };
-
+console.log(volunteers);
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -62,13 +63,14 @@ function Volunteers() {
         console.log(response.data);
         setVolunteers((prevVolunteers) => [...prevVolunteers, response.data]);
         setNewVolunteer({
-          name: "",
+          firstName: "",
+          lastName: "",
+          image: null,
           title: "",
           faculty: "",
           branch: "",
-          startDate: "",
-          endDate: "",
-          image: null
+          startingDate: "",
+          endingDate: "",
         });
       })
       .catch((error) => {
@@ -115,10 +117,11 @@ function Volunteers() {
           <p align="center">Something about our team</p>
           <div className={classes.teamGrid}>
             {volunteers.map((volunteer) => (
-              <TeamCard
-                key={volunteer.id}
+              <VolunteerCard
+                key={volunteer._id}
                 imgSrc={volunteer.photo}
-                name={volunteer.name}
+                firstName={volunteer.firstName}
+                lastName={volunteer.lastName}
                 title={volunteer.title}
                 faculty={volunteer.faculty}
                 branch={volunteer.branch}
