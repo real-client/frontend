@@ -1,9 +1,6 @@
 .signup-title{
     font-size: 60px;
-    position: absolute;
-    display: flex;
-    left: 44%;
-    top: 11%;
+    text-align: center;
     color:#efb100;
 }
 .signup-container {
@@ -22,7 +19,8 @@
   
 .card h2{
     font-size: 25px;
-    text-align: center;
+    text-align: left;
+    text-decoration:underline;
     color:#efb100;
 }
 .card label{

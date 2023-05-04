@@ -76,12 +76,14 @@ function Signup() {
 
   return (
     <div>
-      <h1 className="signup-title">Sign Up</h1>
       <form onSubmit={handleSubmit} className="signup-container">
         <ToastContainer/>
         
         {currentSection === 1 && (
+          
           <div className="card">
+      <h1 className="signup-title">Sign Up</h1>
+
             <h2>Personal Information</h2>
             <div className="form-group">
               <div className="label-input">
