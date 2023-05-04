@@ -17,7 +17,7 @@ function Volunteers() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/Volunteers")
+      .get("http://localhost:5000/volunteer")
       .then((response) => {
         console.log(response.data);
         setVolunteers(response.data);
@@ -53,7 +53,7 @@ function Volunteers() {
     formData.append("endDate", newVolunteer.endDate);
     formData.append("image", newVolunteer.image);
     axios
-      .post("http://localhost:3000/api/Volunteers", formData, {
+      .post("http://localhost:5000/volunteer", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
@@ -78,7 +78,7 @@ function Volunteers() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/api/Volunteers/${id}`)
+      .delete(`http://localhost:5000/volunteer/${id}`)
       .then((response) => {
         console.log(response.data);
         setVolunteers((prevVolunteers) =>
@@ -92,7 +92,7 @@ function Volunteers() {
 
   const handleUpdate = (id, updateVolunteer) => {
     axios
-      .put(`http://localhost:3000/api/Volunteers/${id}`, updateVolunteer)
+      .put(`http://localhost:5000/volunteer/${id}`, updateVolunteer)
       .then((response) => {
         console.log(response.data);
         setVolunteers((prevVolunteers) =>
