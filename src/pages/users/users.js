@@ -259,8 +259,8 @@ function Users(props) {
       options: {
         customBodyRender: (value, tableMeta, updateValue) => {
           const rowIndex = tableMeta.rowIndex;
-          const isEditing = rowIndex === editingRow;
           console.log(value);
+          const isEditing = rowIndex === editingRow;
           return (
             <div style={{ textAlign: "center" }}>
               {isEditing ? (
@@ -271,8 +271,10 @@ function Users(props) {
                     updateValue(e.target.value);
                   }}
                 />
+              ) : value ? (
+                "true"
               ) : (
-                value
+                "false"
               )}
             </div>
           );
