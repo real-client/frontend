@@ -1,4 +1,3 @@
-import "./users.css";
 import Loader from "../../components/loader/loader";
 import ConfirmationPopup from "../../components/confirmationPopup/confirmationPopup";
 import React, { useState, useEffect } from "react";
@@ -13,27 +12,26 @@ import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import SaveAsRoundedIcon from "@mui/icons-material/SaveAsRounded";
 import LibraryAddRoundedIcon from "@mui/icons-material/LibraryAddRounded";
 
+// title/date/time/capacity/status
 function createData(
   _id,
-  first_name,
-  last_name,
-  active_email,
-  phone,
-  student_id,
-  verified
+  title,
+  status,
+  capacity,
+  event_dateTime,
+  deadline_dateTime
 ) {
   return {
     _id,
-    first_name,
-    last_name,
-    active_email,
-    phone,
-    student_id,
-    verified,
+    title,
+    status,
+    capacity,
+    event_dateTime,
+    deadline_dateTime,
   };
 }
 
-function Users(props) {
+function Events(props) {
   const [Loading, setLoading] = useState(true);
   const [Data, setData] = useState([]);
   const [editingRow, setEditingRow] = useState(null);
@@ -42,7 +40,7 @@ function Users(props) {
 
   useEffect(() => {
     setLoading(true);
-    document.title = "Users";
+    document.title = "Events";
     getData();
   }, []);
 
@@ -51,12 +49,11 @@ function Users(props) {
     [].map((item) => {
       createData(
         item._id,
-        item.first_name,
-        item.last_name,
-        item.active_email,
-        item.phone,
-        item.student_id,
-        item.verified
+        item.title,
+        item.status,
+        item.capacity,
+        item.event_dateTime,
+        item.deadline_dateTime
       );
     });
 
@@ -66,7 +63,7 @@ function Users(props) {
 
   const handleDelete = (rowsDeleted) => {
     axios
-      .delete(`http://127.0.0.1:3000/user/${rowsDeleted}`, {})
+      .delete(`http://127.0.0.1:3000/event/${rowsDeleted}`, {})
       .then((response) => {
         getData();
       })
@@ -77,10 +74,10 @@ function Users(props) {
 
   const getData = () => {
     axios
-      .get("http://127.0.0.1:3000/user")
+      .get("http://127.0.0.1:3000/event")
       .then((response) => {
         console.log(response);
-        setData(response.data.response);
+        setData(response.data.message);
         setLoading(false);
       })
       .catch((error) => {
@@ -92,13 +89,12 @@ function Users(props) {
   const handleUpdate = (rowData) => {
     setEditingRow(true);
     axios
-      .put(`http://127.0.0.1:3000/user/${rowData[0]}`, {
-        first_name: rowData[1],
-        last_name: rowData[2],
-        active_email: rowData[3],
-        phone: rowData[4],
-        student_id: rowData[5],
-        verified: rowData[6],
+      .put(`http://127.0.0.1:3000/event/${rowData[0]}`, {
+        title: rowData[1],
+        status: rowData[2],
+        capacity: rowData[3],
+        event_dateTime: rowData[4],
+        deadline_dateTime: rowData[5],
       })
       .then((response) => {
         getData();
@@ -119,8 +115,8 @@ function Users(props) {
       },
     },
     {
-      name: "first_name",
-      label: "First Name",
+      name: "title",
+      label: "Title",
       options: {
         customBodyRender: (value, tableMeta, updateValue) => {
           const rowIndex = tableMeta.rowIndex;
@@ -146,8 +142,8 @@ function Users(props) {
       },
     },
     {
-      name: "last_name",
-      label: "Last Name",
+      name: "status",
+      label: "Status",
       options: {
         customBodyRender: (value, tableMeta, updateValue) => {
           const rowIndex = tableMeta.rowIndex;
@@ -173,8 +169,8 @@ function Users(props) {
       },
     },
     {
-      name: "active_email",
-      label: "Active Email",
+      name: "capacity",
+      label: "Capacity",
       options: {
         customBodyRender: (value, tableMeta, updateValue) => {
           const rowIndex = tableMeta.rowIndex;
@@ -200,8 +196,8 @@ function Users(props) {
       },
     },
     {
-      name: "phone",
-      label: "Phone",
+      name: "event_dateTime",
+      label: "Date",
       options: {
         customBodyRender: (value, tableMeta, updateValue) => {
           const rowIndex = tableMeta.rowIndex;
@@ -227,8 +223,8 @@ function Users(props) {
       },
     },
     {
-      name: "student_id",
-      label: "Student ID",
+      name: "deadline_dateTime",
+      label: "Deadline",
       options: {
         customBodyRender: (value, tableMeta, updateValue) => {
           const rowIndex = tableMeta.rowIndex;
@@ -254,8 +250,8 @@ function Users(props) {
       },
     },
     {
-      name: "verified",
-      label: "Verified",
+      name: "users",
+      label: "Users",
       options: {
         customBodyRender: (value, tableMeta, updateValue) => {
           const rowIndex = tableMeta.rowIndex;
@@ -271,10 +267,8 @@ function Users(props) {
                     updateValue(e.target.value);
                   }}
                 />
-              ) : value ? (
-                "true"
               ) : (
-                "false"
+                value
               )}
             </div>
           );
@@ -389,7 +383,7 @@ function Users(props) {
         <div>
           <Box sx={{ maxWidth: "75%", margin: "auto" }}>
             <MUIDataTable
-              title={"Users"}
+              title={"Events"}
               data={rows}
               columns={columns}
               options={options}
@@ -408,4 +402,4 @@ function Users(props) {
     </>
   );
 }
-export default Users;
+export default Events;

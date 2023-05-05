@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiHomeAlt, BiChevronRight } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
+import { RxActivityLog } from "react-icons/rx";
 import logo from "./logo.svg";
 
 const Sidebar = (props) => {
@@ -47,9 +48,9 @@ const Sidebar = (props) => {
               </li>
 
               <li className="nav-link">
-                <NavLink to="/test">
-                  <BiHomeAlt className="icon" />
-                  <span className="text nav-text">anything</span>
+                <NavLink to="/events">
+                  <RxActivityLog className="icon" />
+                  <span className="text nav-text">Events</span>
                 </NavLink>
               </li>
 
