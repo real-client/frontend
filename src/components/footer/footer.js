@@ -1,4 +1,11 @@
 import React from "react";
+import "./footer.css";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function footer() {
   return (
@@ -7,81 +14,93 @@ export default function footer() {
         <h3> CentreMine</h3>
 
         <p className="footer-links">
-          <a href="/">Home</a>
-
-          <a href="/events">Events</a>
-
-          <a href="/opportunities">Opportunities</a>
-
-          <a href="/competitions">Competitions</a>
-        </p>
-
-        <p className="footer-company-name">
-          copyright <strong>CentreMine</strong>
-          all rights reserved
+          <p>home page  </p> <br />
+          <p>The University</p> <br />
+          <p>Central Administration</p>
         </p>
       </div>
-
       <div className="footer-center">
         <div>
-          <i className="fo-map-marker"></i>
-          <p>
-            <span>ghazzi abad</span>
-            delhi
-          </p>
-        </div>
-        <div>
           <i className="fo-phone"></i>
-          <p>=961 784873</p>
+          <p>961 784873</p>
         </div>
         <div>
           <i className="fo-envelope"></i>
           <p>
-            {" "}
+            
             <a href="">jad@gmail.com</a>
           </p>
         </div>
-        <div>
-            <i className="fo-button">
-            <p>
-                <a href="/src/pages/contactUs">get in touch</a>
-            </p>    
-            </i>
+        <div className="fo-button">
+          <p>
+            <a href="/contactUs">
+              <button>get in touch</button>
+            </a>
+          </p>
+        </div>
+        <div className="footer-center-right">
+          <p>Faculties & Institutes</p>
+          <br /> <br /> <br />
+          <p>Specializations</p>
+          <br /> <br /> <br />
+          <p>Admissions</p>
         </div>
       </div>
-
       <div className="footer-right">
         <p className="footer-company-about">
-          <span>about the company</span>
+          <span>
+            scientific research <br /> <br />
+            teaching stuff
+           </span>
         </p>
 
         <div>
+          <br /> follow us on <br /> <br />
           <a href="#"> 
-          {/* facebook links */}
-            <i className="link-facebook"></i>
+            {/* facebook links */}
+            <i className="link-facebook">
+              
+              <FacebookIcon />
+            </i>
           </a>
           <a href="#">
             {/* instagram links */}
-            <i class="link-instagram"></i>
+            <i class="link-instagram">
+              
+              <InstagramIcon />
+            </i>
           </a>
           <a href="#">
             {/* linkedin links */}
-            <i class="link-linkedin"></i>
+            <i class="link-linkedin">
+              
+              <LinkedInIcon />
+            </i>
           </a>
           <a href="#">
             {/* twitter links */}
-            <i class="link-twitter"></i>
+            <i class="link-twitter">
+              
+              <TwitterIcon />
+            </i>
           </a>
           <a href="#">
             {/* youtube links */}
-            <i class="link-youtube"></i>
+            <i class="link-youtube">
+              
+              <YouTubeIcon /> 
+            </i>
           </a>
           <a href="#">
             {/* wtsap links */}
-            <i class="link-wtsap"></i>
+            <i class="link-wtsap">
+              
+              <WhatsAppIcon />
+            </i>
           </a>
         </div>
-      </div>-
+      </div>
+      
     </footer>
   );
 }

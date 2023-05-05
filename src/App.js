@@ -14,6 +14,7 @@ import Team from "./pages/team/Team";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Admin from './pages/admin/admin';
+import Footer from './components/footer/footer'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <NavBar />
       {/* <Home /> */}
       <Volunteers />
+      <Footer/>
       <div className="App">
         <div className="App-container">
           {/* <Routes>
