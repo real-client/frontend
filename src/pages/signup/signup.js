@@ -56,7 +56,7 @@ function Signup() {
         body
        )
         .then((response) => { 
-          console.log(body);
+          // console.log(body);
           console.log("hey")
           toast.success("Signup Done !", {
             position: toast.POSITION.TOP_RIGHT,
@@ -363,7 +363,7 @@ function Signup() {
               id="uni-member"
               name="uni-member"
               value={member}
-              onChange={(event) => {setMember(event.target.value); console.log(event.target.value);}}
+              onChange={(event) => {setMember(event.target.value);}}
               className="input-email"
             >
               <option value=""></option>

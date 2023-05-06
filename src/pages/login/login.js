@@ -42,7 +42,7 @@ function Login() {
             const data = response.data;
             if (data && data.token) {
                 // Successful login
-                console.log(response)
+                // console.log(response)
                 localStorage.setItem("email", email || "");
               localStorage.setItem("token", "true");
               toast.success("Success Login !", {
