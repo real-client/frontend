@@ -13,6 +13,8 @@ export default function Home() {
   const [UserData, setData] = useState([]);
   const [AdminData, setAdminData] = useState([]);
   const [EventData, setEventData] = useState([]);
+  const [VolunteerData, setVolunteerData] = useState([]);
+  const [OpportunityData, setOpportunityData] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -20,21 +22,28 @@ export default function Home() {
     getUserData();
     getAdminData();
     getEventData();
+    getVolunteerData();
+    getOpportunityData();
   }, []);
 
   const data = {
-    labels: ["Events", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["Events", "User", "Admin", "Opportunities", "Volunteers"],
     datasets: [
       {
-        label: " Number of Votes",
-        data: [12, 19, 3, 5, 2, 3],
+        label: " ",
+        data: [
+          EventData.length,
+          UserData.length,
+          AdminData.length,
+          OpportunityData.length,
+          VolunteerData.length,
+        ],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
           "rgba(255, 206, 86, 0.2)",
           "rgba(75, 192, 192, 0.2)",
           "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
@@ -42,7 +51,6 @@ export default function Home() {
           "rgba(255, 206, 86, 1)",
           "rgba(75, 192, 192, 1)",
           "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
         ],
         cutout: "75%",
       },
@@ -103,7 +111,31 @@ export default function Home() {
     axios
       .get("http://127.0.0.1:3000/event")
       .then((response) => {
-        setEventData(response.data.response);
+        setEventData(response.data.message);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  };
+  const getVolunteerData = () => {
+    axios
+      .get("http://127.0.0.1:3000/volunteer")
+      .then((response) => {
+        setVolunteerData(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  };
+  const getOpportunityData = () => {
+    axios
+      .get("http://127.0.0.1:3000/opportunity")
+      .then((response) => {
+        setOpportunityData(response.data.response);
         setLoading(false);
       })
       .catch((error) => {
@@ -127,7 +159,11 @@ export default function Home() {
               unit="Learner"
               number={UserData.length}
             />
-            <RectangleCard title="Total Events" unit="Event" number={"9"} />
+            <RectangleCard
+              title="Total Events"
+              unit="Event"
+              number={EventData.length}
+            />
           </div>
           <div className="total-info">
             <div className="doughut-wrapper">

@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { BiHomeAlt, BiChevronRight } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { RxActivityLog } from "react-icons/rx";
+import { TbLogout } from "react-icons/tb";
 import logo from "./logo.svg";
 
 const Sidebar = (props) => {
@@ -54,7 +55,7 @@ const Sidebar = (props) => {
                 </NavLink>
               </li>
 
-              <li className="nav-link">
+              {/* <li className="nav-link">
                 <NavLink to="/test">
                   <BiHomeAlt className="icon" />
                   <span className="text nav-text">anything</span>
@@ -73,21 +74,21 @@ const Sidebar = (props) => {
                   <BiHomeAlt className="icon" />
                   <span className="text nav-text">anything</span>
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           <div className="bottom-content">
-            <li className="nav-link">
+            {/* <li className="nav-link">
               <NavLink to="/test">
                 <BiHomeAlt className="icon" />
                 <span className="text nav-text">anything</span>
               </NavLink>
-            </li>
+            </li> */}
             <li className="">
-              <NavLink to="/test">
-                <BiHomeAlt className="icon" />
-                <span className="text nav-text">anything</span>
+              <NavLink to="/login">
+                <TbLogout className="icon" />
+                <span className="text nav-text">logout</span>
               </NavLink>
             </li>
           </div>
